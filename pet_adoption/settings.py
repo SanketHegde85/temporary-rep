@@ -22,14 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-y4v@0q#g3=c)*jngw^sk2(40des#j6a#@()qs=04850ftq*8!o'
 
-# 'django-insecure-y4v@0q#g3=c)*jngw^sk2(40des#j6a#@()qs=04850ftq*8!o'
+# *****************************************************************
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = []
+
+
+# *************************************************************
+# DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -103,8 +110,13 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+# ***********************************************************************
+
+# DATABASES["default"] = dj_database_url.parse("postgres://pet_adoption_0m1b_user:04vUDHN7owcUpMgeyDHQlu9J2wNoMOrm@dpg-co2ggh821fec73asuhp0-a.singapore-postgres.render.com/pet_adoption_0m1b")
+
+# *************************************************
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 # postgres://pet_adoption_0m1b_user:04vUDHN7owcUpMgeyDHQlu9J2wNoMOrm@dpg-co2ggh821fec73asuhp0-a.singapore-postgres.render.com/pet_adoption_0m1b
 

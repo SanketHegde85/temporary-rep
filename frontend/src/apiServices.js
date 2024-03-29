@@ -64,6 +64,7 @@ export class API {
 
     static getLoginDetails() {
         return fetch('http://127.0.0.1:8000/api/login_details/', {
+        // return fetch('https://pet-adoption-application.onrender.com/api/login_details/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
