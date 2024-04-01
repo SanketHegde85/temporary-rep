@@ -1,6 +1,6 @@
 export class API {
     // static getCatPetDonDetails() {
-    //     return fetch('http://10.112.210.191:8000/api/cpd/', {
+    //     return fetch('http://10.16.2.89:8000/api/cpd/', {
     //         method: 'GET',
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export class API {
     
     
     static getPetDetails() {
-        return fetch('http://10.112.210.191:8080/api/pet_details/', {
+        return fetch('http://10.16.2.89:8080/api/pet_details/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export class API {
     }
 
     static postPetDetails(body) {
-        return fetch('http://10.112.210.191:8080/api/pet_details/', {
+        return fetch('http://10.16.2.89:8080/api/pet_details/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ export class API {
         }).then( resp => resp.json() )
     }
     static deletePetDetails(body) {
-        return fetch('http://10.112.210.191:8080/api/pet_details/', {
+        return fetch('http://10.16.2.89:8080/api/pet_details/', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export class API {
         }).then( resp => resp.json() )
     }
     static getCategory() {
-        return fetch('http://10.112.210.191:8080/api/category/', {
+        return fetch('http://10.16.2.89:8080/api/category/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ export class API {
     }
 
     static postCategory(body) {
-        return fetch('http://10.112.210.191:8080/api/category/', {
+        return fetch('http://10.16.2.89:8080/api/category/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ export class API {
     }
 
     static getLoginDetails() {
-        return fetch('http://10.112.210.191:8080/api/login_details/', {
+        return fetch('http://10.16.2.89:8080/api/login_details/', {
         // return fetch('https://pet-adoption-application.onrender.com/api/login_details/', {
             method: 'GET',
             headers: {
@@ -75,7 +75,7 @@ export class API {
     }
 
     static postLoginDetails(body) {
-        return fetch('http://10.112.210.191:8080/api/login_details/', {
+        return fetch('http://10.16.2.89:8080/api/login_details/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ export class API {
         }).then( resp => resp.json() )
     }
     static putLoginDetails(body) {
-        return fetch('http://10.112.210.191:8080/api/login_details/', {
+        return fetch('http://10.16.2.89:8080/api/login_details/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ export class API {
         }).then( resp => resp.json() )
     }
     static getAdoptions() {
-        return fetch('http://10.112.210.191:8080/api/adoption_details/', {
+        return fetch('http://10.16.2.89:8080/api/adoption_details/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ export class API {
         // .catch(err => console.log(err))
     }
     static postAdoptionDetails(body) {
-        return fetch('http://10.112.210.191:8080/api/adoption_details/', {
+        return fetch('http://10.16.2.89:8080/api/adoption_details/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ export class API {
         }).then( resp => resp.json() )
     }
     static getDonations() {
-        return fetch('http://10.112.210.191:8080/api/donations/', {
+        return fetch('http://10.16.2.89:8080/api/donations/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
