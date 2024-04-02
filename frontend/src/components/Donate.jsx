@@ -21,11 +21,11 @@ function Donate(props) {
         setUserName(props.userName)
         console.log(userName)
         API.postPetDetails({ petName, age, price, breed, species, userName: props.userName})
+            .then(() => props.donationDone())
             .then(() => setDonateSuccess(true))
-            // .then(() => props.donationDone())
         // navigate('/logged_in')
         // setDonateSuccess(true)
-        props.donationDone()
+        // props.donationDone()
         // window.location.href = '/'
     }
 
