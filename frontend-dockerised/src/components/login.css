@@ -1,0 +1,18 @@
+.loginForm {
+    padding: 25px;
+    /* width: 100%; */
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.loginCard {
+    /* background-color: black; */
+    margin: auto;
+}
+
+.loginCardContent {
+    background-color: #BBE2EC;
+}

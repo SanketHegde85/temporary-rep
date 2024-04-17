@@ -72,7 +72,7 @@ ROOT_URLCONF = 'pet_adoption.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend-dockerised/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,13 +99,26 @@ WSGI_APPLICATION = 'pet_adoption.wsgi.application'
 # }
 
 
-DATABASES = {
+# DATABASES = {                        #local database
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "pet_adoption_2",
+#         "USER": "postgres",
+#         "PASSWORD": "root",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
+
+
+DATABASES = {                     # DOCKERISED DATABASE
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "pet_adoption_2",
-        "USER": "postgres",
-        "PASSWORD": "root",
-        "HOST": "127.0.0.1",
+        "NAME": os.environ.get('DATABASE_NAME', 'pet_adoption'),
+        "USER": os.environ.get('DATABASE_USER', 'postgres'),
+        "PASSWORD": os.environ.get('DATABASE_PASSWORD', 'root'),
+        "HOST": os.environ.get('DATABASE_HOST', '172.17.0.2'), 
+        # "HOST": "172.17.0.2",
         "PORT": "5432",
     }
 }
@@ -156,13 +169,39 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'frontend/build/static')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend-dockerised/build/static')
+]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/build/static')
+# STATIC_ROOT = os.path.join(BASE_DIR, '/frontend-dockerised/build/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# ************************************************************************
+# import time
+# from django.db import OperationalError
+# from django.db.utils import ConnectionHandler
+
+# def wait_for_db(retries=10, delay=5):
+#     """
+#     Retry connecting to the database for a certain number of times with a delay.
+#     """
+#     db_conn = None
+#     for _ in range(retries):
+#         try:
+#             db_conn = ConnectionHandler()["default"]
+#             db_conn.ensure_connection()
+#             break  # Connection successful, break out of the loop
+#         except OperationalError:
+#             print("Database connection failed. Retrying...")
+#             time.sleep(delay)
+#     return db_conn
+
+# # Call wait_for_db function before accessing the database
+# db_conn = wait_for_db()
